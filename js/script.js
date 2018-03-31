@@ -15,7 +15,7 @@ pickRock.addEventListener('click', function() { playerPick('rock') });
 pickPaper.addEventListener('click', function() { playerPick('paper') });
 pickScissors.addEventListener('click', function() { playerPick('scissors') });
 
-// the game's logic
+// initial values
 
 var gameState = 'notStarted', //started // ended
     player = {
@@ -48,6 +48,8 @@ function setGameElements() {
             resultsElem.style.display = 'none';
     }
 }
+
+setGameElements();
 
 // Starting the game
 
@@ -131,3 +133,16 @@ function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
 }
+setGamePoints();
+
+// Finishing the game
+
+/*function showTheWinner() {
+    if (player.score = 10 || computer,score = 10) {
+
+        NIE WIEM... - DO PRZEGADANIA 
+
+    }
+}
+*/
+
