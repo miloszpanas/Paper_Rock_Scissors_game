@@ -134,11 +134,20 @@ function setGamePoints() {
 
 function checkTheWinner() {
     if (player.score == 10) {
-        alert('The winner is ' + player.name);
+        swal(
+            'Congratulations, ' + player.name,
+            'You are the winner!',
+            'success'
+    );
         gameState = 'ended';
         setGameElements();
     } else if (computer.score == 10) {
-        alert('The winner is computer');
+        swal({
+            type: 'error',
+            title: 'Oops, looks like Computer has won!',
+            text: 'Give it another try!',
+
+        });     
         gameState = 'ended';
         setGameElements();
     }
