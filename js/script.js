@@ -70,11 +70,6 @@ function newGame() {
     
 }
 
-// Player's selection
-
-function playerPick(playerPick) {
-    console.log(playerPick);
-}
 
 // Drawing computer's selection
 
@@ -119,11 +114,14 @@ function checkRoundWinner(playerPick, computerPick) {
       if (winnerIs == 'player') {
           playerResultElem.innerHTML = "Win!";
           player.score++;
+
       } else if (winnerIs == 'computer') {
           computerResultElem.innerHTML = "Win!";
-          computer.score++;
+          computer.score++;  
       }
-  
+
+      setGamePoints();
+      checkTheWinner();
   }
   
 
@@ -133,14 +131,27 @@ function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
 }
-setGamePoints();
+
+function checkTheWinner() {
+    if (player.score == 10) {
+        alert('The winner is ' + player.name);
+        gameState = 'ended';
+        setGameElements();
+    } else if (computer.score == 10) {
+        alert('The winner is computer');
+        gameState = 'ended';
+        setGameElements();
+    }
+}
+
+
 
 // Finishing the game
 
 /*function showTheWinner() {
     if (player.score = 10 || computer,score = 10) {
 
-        NIE WIEM... - DO PRZEGADANIA 
+        
 
     }
 }
